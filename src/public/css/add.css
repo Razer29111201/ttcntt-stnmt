@@ -1,0 +1,73 @@
+#container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 200px;
+}
+
+.ck-content .image {
+    /* block images */
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+.addnews {
+    margin-top: 30px;
+}
+
+.form-groud {
+    margin-top: 20px;
+}
+
+.form-groud input {
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #f1f1f1ef;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.form-groud input:focus {
+
+    border: 1px solid #49b152;
+}
+
+.form-groud select {
+    width: 50%;
+    height: 40px;
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+    background-color: #f1f1f1ef;
+    line-height: 3;
+}
+
+.form-groud select:focus {
+    border: 1px solid #49b152;
+}
+
+.form-groud button {
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: #80ac83;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 85%;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-groud button:hover {
+    background-color: #49b152;
+
+}

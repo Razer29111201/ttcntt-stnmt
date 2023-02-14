@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/cssdetailnews.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <title>Trung Tâm Công Nghệ Thông Tin Sở Tài Nguyên Môi Trường Quảng Ninh</title>
+</head>
+
+<body>
+    <div class="grid wide">
+        <%- include('./partials/header'); %>
+
+
+
+            <div class="body">
+                <div class="row">
+                    <div class="col m-9">
+                        <div class="link">
+                            <a href="">Trang Chủ</a>
+                            <i class='bx bx-chevron-right'></i>
+                            <a href="/news">Tin Tức</a>
+                            <i class='bx bx-chevron-right'></i>
+                            <% for(let i=0 ; i < newid.length; i++ ){ %>
+                                <a href="<%=newid[i].id%>">
+                                    <%=newid[i].heading%>
+                                </a>
+                                <%} %>
+                        </div>
+                        <% for(let i=0 ; i < newid.length; i++ ){ %>
+
+                            <div class="news-body">
+                                <div class="news-heading">
+                                    <h2>
+                                        <%=newid[i].heading%>
+                                    </h2>
+                                    <small class="news-time">
+                                        <%=newid[i].time%>
+                                    </small>
+                                </div>
+                                <div class="news-title">
+                                    <p>
+                                        <%=newid[i].title%>
+                                    </p>
+                                </div>
+                                <div class="news-content">
+                                    <%-newid[i].content%>
+                                </div>
+                            </div>
+                            <%} %>
+                                <ul class="list-news">
+                                    <h3>Tin Mới Nhất</h3>
+                                    <% for(let i=0 ; i < 6.; i++ ){ %>
+                                        <li class="item-news">
+                                            <a href="/news/<%=news[i].id%>">
+                                                <%=news[i].heading%>
+                                            </a>
+                                        </li>
+                                        <%} %>
+                                </ul>
+                    </div>
+                    <div class="col m-3">
+                        <%- include('./partials/sidebar'); %>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <%- include('./partials/footer'); %>
+
+        <script src="/js/index.js"></script>
+        <script src="/js/jquery-3.6.3.min.js"></script>
+        <script src="a.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/cssnews.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <title>Trung Tâm Công Nghệ Thông Tin Sở Tài Nguyên Môi Trường Quảng Ninh</title>
+</head>
+
+<body>
+    <div class="grid wide">
+        <%- include('./partials/header'); %>
+
+
+
+
+            <div class="body">
+                <div class="row">
+                    <div class="col m-9">
+                        <div class="link">
+                            <a href="/">Trang Chủ</a>
+                            <i class='bx bx-chevron-right'></i>
+                            <a href="/news">Tin Tức</a>
+                            <i class='bx bx-chevron-right'></i>
+                            <a href="">Hợp Tác Phát Triển</a>
+                        </div>
+                        <div class="heading">
+                            <h2>Tin Tức - Sự Kiện</h2>
+                            <div></div>
+                        </div>
+                        <div id="news">
+                            <% for(let i=0 ; i < htpt.length; i++ ){ %>
+                                <div class="news">
+                                    <div class="new-img">
+                                        <a href="/news/<%=htpt[i].id%>">
+                                            <img src="/<%=htpt[i].thump%>" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-title">
+                                        <div class="news-heading">
+
+
+                                            <a href="/news/<%=htpt[i].id%>">
+                                                <%=htpt[i].heading%>
+                                            </a>
+
+
+                                        </div>
+                                        <div class="news-summary">
+                                            <p>
+                                                <%=htpt[i].title%>
+                                            </p>
+                                            <span>29/11/2023</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%} %>
+                        </div>
+
+                        <div id="demo">
+
+                        </div>
+                    </div>
+                    <div class="col m-3">
+                        <%- include('./partials/sidebar'); %>
+                    </div>
+                </div>
+            </div>
+            <%- include('./partials/footer'); %>
+    </div>
+
+
+
+    <script src="/js/jquery-3.6.3.min.js"></script>
+    <script src="/js/pagination.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/newshtpt.js"></script>
+
+</body>
+
+</html>

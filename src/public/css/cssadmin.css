@@ -1,0 +1,129 @@
+.left {
+    position: relative;
+}
+
+.dashboard {
+    position: static;
+
+}
+
+.dashboard-list {
+    list-style: none;
+    background-color: #333;
+}
+
+.dashboard-item {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dashboard-item:hover {
+    color: #0c83d6;
+}
+
+.dashboard-item.active {
+    background-color: rgb(143, 143, 143);
+}
+
+.dashboard-content {
+    margin-top: 30px;
+    position: relative;
+}
+
+.news {
+    display: flex;
+    margin-top: 40px;
+}
+
+.slide {
+    display: flex;
+    margin-top: 40px;
+
+}
+
+.new-img {
+    height: 150px;
+    width: 220px;
+}
+
+.new-img img {
+    width: 220px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-title {
+    margin-left: 10px;
+    flex: 1;
+}
+
+.news-heading {
+    margin-top: -10px;
+}
+
+.news-heading a {
+    text-decoration: none;
+    color: #0c83d6;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+
+.news-summary {
+    font-size: 14px;
+
+}
+
+.news-summary p {
+    line-height: 2;
+}
+
+.news-summary span {
+    color: rgb(179, 179, 179);
+
+}
+
+.handle {
+    margin-left: 20px;
+}
+
+.add,
+.edit,
+.delete {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin-top: 20px;
+}
+
+.add {
+    position: absolute;
+    right: 0;
+    top: -50px;
+}
+
+.handle button {
+    line-height: 2;
+    width: 100px;
+    cursor: pointer;
+}
+
+.add i,
+.edit i,
+.delete i {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.hiden {
+    display: none;
+}
+
+table,
+td {
+    border: 1px solid black;
+    text-align: center;
+}

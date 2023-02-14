@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/cssadmin.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <title>Admin</title>
+</head>
+
+<body>
+
+    <div class="grid wide">
+        <%- include('./partials/header'); %>
+
+
+
+
+            <div class="body">
+                <div class="row">
+                    <div class="col m-3 left">
+                        <div class="dashboard">
+                            <ul class="dashboard-list">
+                                <li class="dashboard-item active">User</li>
+                                <li class="dashboard-item">Slide</li>
+                                <li class="dashboard-item">Tin Tức</li>
+                                <li class="dashboard-item">Thông Báo Văn Bản</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col m-9">
+                        <div class="dashboard-content">
+                            <table style="width:100%">
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Rules</th>
+                                    <th style="width:120px"></th>
+                                </tr>
+                                <% for(let i=0 ; i < acc.length; i++ ){ %>
+                                    <tr>
+                                        <td>
+                                            <%=acc[i].user%>
+                                        </td>
+                                        <td>
+                                            <%=acc[i].pass%>
+                                        </td>
+                                        <td>
+                                            <%=acc[i].role%>
+                                        </td>
+                                        <td>
+
+                                            <div class="handle">
+
+
+                                                <a href="" class="edit">
+                                                    <i class='bx bx-edit-alt'></i>
+                                                    Sửa
+                                                </a>
+                                                <a href="" class="delete">
+                                                    <i class='bx bx-x'></i>
+                                                    Xóa
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <%} %>
+
+                            </table>
+
+                        </div>
+
+
+                        <div class="dashboard-content hiden ">
+                            <a href="" class="add">
+                                <i class='bx bx-add-to-queue'></i>
+                                Thêm
+                            </a>
+                            <% for(let i=0 ; i < slide.length; i++ ){ %>
+                                <div class="slide">
+
+                                    <div class="new-img">
+                                        <a href="">
+                                            <img src="<%=slide[i].img%>" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-title">
+                                        <div class="news-heading">
+
+
+                                            <%=slide[i].title%>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="handle">
+
+
+                                        <a href="" class="edit">
+                                            <i class='bx bx-edit-alt'></i>
+                                            Sửa
+                                        </a>
+                                        <a href="" class="delete">
+                                            <i class='bx bx-x'></i>
+                                            Xóa
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <%} %>
+                        </div>
+                        <div class="dashboard-content hiden">
+                            <a href="/admin/addnews" class="add">
+                                <i class='bx bx-add-to-queue'></i>
+                                Thêm
+
+                            </a>
+                            <% for(let i=0 ; i < news.length; i++ ){ %>
+                                <div class="news">
+                                    <div class="new-img">
+                                        <a href="">
+                                            <img src="<%=news[i].thump%>" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-title">
+                                        <div class="news-heading">
+
+
+                                            <a href="">
+                                                <%=news[i].heading%>
+                                            </a>
+
+
+                                        </div>
+                                        <div class="news-summary">
+                                            <p>
+                                                <%=news[i].title%>
+                                            </p>
+                                            <span>29/11/2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="handle">
+
+                                        <form action="/admin/editnews/<%=news[i].id%>" method="get">
+
+                                            <button type="submit" href="" class="edit">
+                                                <input type="text" hidden name="edit" value="<%=news[i].id%>">
+                                                <i class='bx bx-edit-alt'></i>
+                                                Sửa
+                                            </button>
+                                        </form>
+                                        <form action="/admin/delete" method="post">
+                                            <button type="submit" class="delete">
+                                                <input type="text" hidden name="deletenew" value=" <%=news[i].id%>">
+                                                <i class='bx bx-x'></i>
+                                                Xóa
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <%} %>
+
+                        </div>
+                        <div class="dashboard-content hiden">
+                            <a href="/admin/addttvb" class="add">
+                                <i class='bx bx-add-to-queue'></i>
+                                Thêm
+
+                            </a>
+                            <table class="content-table">
+                                <tr>
+                                    <th>Số Văn Bản</th>
+                                    <th style="width: 55%;">Tiêu Đề</th>
+                                    <th>Download</th>
+                                    <th></th>
+
+                                </tr>
+                                <% for(let i=0 ; i < ttvb.length; i++ ){ %>
+                                    <tr>
+                                        <td>
+                                            <%=ttvb[i].sovb%>
+                                        </td>
+                                        <td style="text-align: start;">
+                                            <%=ttvb[i].title%>
+                                        </td>
+                                        <td><a href="<%=ttvb[i].linkfile%>">Download</a></td>
+                                        <td>
+                                            <button><a href="/admin/editttvb/<%=ttvb[i].id%>">Sửa</a></button>
+                                            <form action="admin/deletettvb" method="post">
+                                                <input type="text" name="id" hidden value="<%=ttvb[i].id%>">
+                                                <button type="submit">Xóa</button>
+                                            </form>
+                                        </td>
+
+                                    </tr>
+                                    <%} %>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <%- include('./partials/footer'); %>
+
+        <script src="/js/jsadmin.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+.introduction {
+    margin-top: 30px;
+}
+
+.introduction h1 {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+    color: #0c83d6;
+    text-transform: uppercase;
+}
+
+.introduction-img {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.introduction-img img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.introduction-img small {
+    font-style: italic;
+    text-align: center;
+}
+
+.introduction-body {
+    margin-top: 40px;
+}
+
+.introduction-body h2 {
+    text-align: center;
+    color: #0c83d6;
+    margin-bottom: 20px;
+}
+
+.introduction-body h4 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.introduction-body p {
+    position: relative;
+    text-indent: 30px;
+    line-height: 2;
+}
+
+.introduction-body p::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #0c83d6;
+    left: 0;
+    top: 10px;
+    border-radius: 50%;
+}
+
+.chucnang p {}

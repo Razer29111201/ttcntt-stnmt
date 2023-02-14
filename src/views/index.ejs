@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>Trung Tâm Công Nghệ Thông Tin Sở Tài Nguyên Môi Trường Quảng Ninh</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <%- include('./partials/header'); %>
+            <div class="body">
+                <div class="row">
+
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="body-slide">
+                                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <% for(let i=0 ; i < 3; i++ ){ %>
+                                                <div class="carousel-item active" data-bs-interval="2000">
+                                                    <img src="<%=slide[i].img%>" class="d-block w-100" alt="...">
+                                                    <div class="slide-title">
+                                                        <p>
+                                                            <%=slide[i].title%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <% } %>
+
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+
+
+                                <div class="news">
+                                    <h4>TIN TỨC MỚI NHẤT</h4>
+                                    <div class="hr"></div>
+                                    <ul class="news-list">
+                                        <% for(let i=0 ; i < 5; i++ ){ %>
+                                            <li class="news-item">
+                                                <a href="/news/<%=news[i].id%>">
+                                                    <%=news[i].heading%>
+                                                </a>
+                                            </li>
+                                            <%} %>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news_events">
+                            <h4>Tin Tức - Sự Kiện</h4>
+                            <div class="hr-body"></div>
+                            <div class="news_events-body">
+                                <% if(news) { %>
+                                    <a href="/news/<%=news[0].id%>">
+
+                                        <img src="<%=news[0].thump%>" alt="">
+                                    </a>
+
+                                    <div class="news_events-title">
+
+                                        <h5><a href="/news/<%=news[0].id%>">
+                                                <%=news[0].heading%>
+                                            </a>
+                                        </h5>
+
+                                        <p>
+                                            <%=news[0].title%>
+                                        </p>
+
+                                        <a class="detail" href="">chi tiết..</a>
+                                    </div>
+                            </div>
+                            <% } %>
+                        </div>
+                        <ul class="news_events-list">
+                            <% for(let i=5 ; i < 10; i++ ){ %>
+                                <li class="news_events-item">
+                                    <a href="/news/<%=news[i].id%>">
+                                        <%=news[i].heading%>
+                                    </a>
+                                </li>
+                                <%} %>
+                        </ul>
+
+
+                        <div class="news_events">
+                            <h4>Môi Trường</h4>
+                            <div class="hr-body"></div>
+                            <div class="news_events-body">
+                                <a href="">
+
+                                    <img src="http://ttcntt-stnmtquangninh.gov.vn/FileUpload/images/BBVjXqd.jpg" alt="">
+                                </a>
+
+                                <div class="news_events-title">
+
+                                    <h5><a href="">Quảng Ninh lần thứ 2 liên tiếp đứng ngôi vị quán quân PCI</a>
+                                    </h5>
+
+                                    <p>Sáng 28/3, Phòng Thương mại và Công nghiệp Việt Nam (VCCI) phối hợp Cơ quan Phát
+                                        triển quốc tế Hoa Kỳ (USAID) tổ chức công bố báo cáo thường niên Chỉ số năng lực
+                                        cạnh tranh cấp tỉnh PCI năm 2018. Các đồng chí: Nguyễn Văn Đọc, Bí thư Tỉnh ủy,
+                                        Chủ
+                                        tịch HĐND tỉnh; Nguyễn Đức Long, Phó Bí thư Tỉnh ủy, Chủ tịch UBND tỉnh, dự buổi
+                                        công bố </p>
+
+                                    <a class="detail" href="">chi tiết..</a>
+                                </div>
+                            </div>
+                            <ul class="news_events-list">
+                                <li class="news_events-item">
+                                    <a href="">Gmail thêm tính năng lên lịch gửi email</a>
+                                </li>
+                                <li class="news_events-item">
+                                    <a href="">Đồng bộ hệ thống quan trắc tự động để giám sát môi trường</a>
+                                </li>
+                                <li class="news_events-item">
+                                    <a href="">Công bố Chỉ số Cải cách hành chính cấp sở, ngành, địa phương và Chỉ số
+                                        SIPAS
+                                        năm 2018</a>
+                                </li>
+                                <li class="news_events-item">
+                                    <a href="">Khởi công cao tốc Vân Đồn - Móng Cái: Mở rộng cánh cửa nối Việt Nam,
+                                        ASEAN
+                                        với Trung Quốc</a>
+                                </li>
+                                <li class="news_events-item">
+                                    <a href="">Sẽ xây dựng khu công viên CNTT tập trung tại Quảng Ninh</a>
+                                </li>
+                                <li class="news_events-item">
+                                    <a href="">Luật An ninh mạng có hiệu lực từ ngày 1/1/2019</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <%- include('./partials/sidebar'); %>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+
+    <%- include('./partials/footer'); %>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"></script>
+        <script src="/js/jquery-3.6.3.min.js"></script>
+        <script src="js/index.js"></script>
+        <!-- <script src="/js/acc.js"></script> -->
+</body>
+
+</html>

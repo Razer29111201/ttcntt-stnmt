@@ -1,0 +1,89 @@
+.body {
+    margin-top: 30px;
+}
+
+.body h1 {
+    text-align: center;
+    color: #0c83d6;
+}
+
+.category {
+    margin-top: 20px;
+
+}
+
+.category-select {
+    margin-top: 20px;
+}
+
+.category-select select {
+    margin-left: 20px;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.category-select select option {
+    font-size: 14px;
+
+
+}
+
+.content-table {
+    width: 100%;
+    margin-top: 100px;
+    box-shadow: 2px 2px 5px #c5c5c5;
+    padding: 20px 0;
+}
+
+.content-table tr {}
+
+.content-table tr th {
+    width: 15%;
+}
+
+.content-table tr td {
+    text-align: center;
+}
+
+#select {
+    margin: 20px 0;
+    position: relative;
+}
+
+.sel i {
+    text-align: end;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.selectt {
+    box-shadow: 2px 2px 5px #c5c5c5;
+}
+
+.selectt tr td:first-child {
+    text-align: end;
+    width: 15%;
+}
+
+.selectt tr td:last-child {
+    padding: 10px 20px;
+}
+
+.search {
+    margin: 0 auto;
+}
+
+.search input {
+    width: 60%;
+    margin-top: 30px;
+    margin-left: 15%;
+    height: 30px;
+    outline: none;
+    padding: 0 20px;
+    font-size: 14px;
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/cssadmin.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <title>Admin</title>
+</head>
+
+<body>
+
+    <div class="grid wide">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-img">
+                    <img src="./assets/img/logo.png" alt="" class="">
+                </div>
+                <div class="header-heding">
+                    <h2>TRUNG TÂM CÔNG NGHỆ THÔNG TIN</h2>
+                    <h2>SỞ TÀI NGUYÊN MÔI TRƯỜNG QUẢNG NINH</h2>
+                </div>
+                <div class="header-right">
+                    <div class="header-user">
+                        <a href="">Đăng Nhập</a>
+                        <div></div>
+                        <a href="">Đăng Ký</a>
+                    </div>
+                    <div class="header-search">
+                        <input type="text" placeholder="Tìm Kiếm.......">
+                        <i class='bx bx-search-alt-2'></i>
+                    </div>
+                    <div class="header-date">
+                        <div class="time" id="time">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-dropdown">
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a href="">Trang Chủ</a>
+                    </li>
+
+                    <li class="dropdown-item gt">
+                        <a href="">Giới Thiệu</a>
+                        <ul class="drop-lv1">
+                            <li class="drop-lv1-item">
+                                <a href="">Giới Thiệu</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Quyết Định Thành Lập</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Sơ Đồ Tổ Chức</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Điều Lệ Tổ Chức</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-item tt-sk">
+                        <a href="">Tin Tức - Sự Kiện</a>
+                        <ul class="drop-lv1">
+                            <li class="drop-lv1-item">
+                                <a href="">Công Nghệ Thông Tin</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Tài Nguyên Môi Trường</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Hoạt Động Nội Bộ</a>
+                            </li>
+
+                            <li class="drop-lv1-item">
+                                <a href="">Hợp Tác Phát Triển</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="">Thông tin Văn Hóa</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="">Trao Đổi</a>
+                    </li>
+                </ul>
+
+            </div>
+        </header>
+        <div class="addnews">
+            <form action="addttvb/addd" method="post" enctype="multipart/form-data">
+                <div class="form-groud">
+                    <input type="text" name="heading" placeholder="Nhập Số Văn Bản">
+                </div>
+                <div class="form-groud">
+                    <input type="file" name="file" id="">
+                </div>
+                <div class="form-groud">
+                    <input type="text" name="title" placeholder="Nhập Tiêu Đề">
+                </div>
+                <div class="form-groud">
+
+
+
+                    <textarea name="editor" id="editor" cols="30" rows="10" maxlength="1000000"></textarea>
+
+
+
+
+                </div>
+
+                <div class="form-groud">
+                    <label for="">Dạng Văn Bản: </label>
+                    <select name="vanban" class="vanban">
+
+                        <option value="Thông Báo">Thông Báo</option>
+                        <option value="Địa Phương">Địa Phương</option>
+                        <option value="Trung Ương">Trung Ương</option>
+                    </select>
+                </div>
+                <div class="form-groud">
+                    <label for="">Chủ Đề: </label>
+                    <select name="chude" class="chude" id="">
+
+                        <option value="Giới thiệu">Giới thiệu</option>
+                        <option value="Quyết định thành lập">Quyết định thành lập</option>
+                        <option value="Sơ đồ tổ chức">Sơ đồ tổ chức</option>
+                        <option value="Điều lệ tổ chức">Điều lệ tổ chức</option>
+                        <option value="Tin tức nổi bật"> Tin tức nổi bật</option>
+                        <option value="Tài nguyên và môi trường">Tài nguyên và môi trường</option>
+                        <option value="Hoạt động nội bộ">Hoạt động nội bộ</option>
+                        <option value="Hợp tác phát triển">Hợp tác phát triển</option>
+                        <option value="Công nghệ thông tin"> Công nghệ thông tin</option>
+                        <option value="Danh sách Ứng dụng">Danh sách Ứng dụng</option>
+                    </select>
+                </div>
+                <div class="form-groud">
+                    <button type="submit">vl</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/super-build/ckeditor.js"></script>
+    <script src="/js/index.js"></script>
+    <script>
+        // CKEDITOR.replace('content', {
+        //     extraPlugins: 'filebrowser',
+        //     filebrowserUrl: '/list',
+        //     filebrowserUploadMethod: 'form',
+        //     filebrowserUploadUrl: 'addnews/upload'
+        // })
+
+
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+            // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+            toolbar: {
+                items: [
+                    'exportPDF', 'exportWord', '|',
+                    'findAndReplace', 'selectAll', '|',
+                    'heading', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'undo', 'redo',
+                    '-',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                    'alignment', '|',
+                    'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                    'textPartLanguage', '|',
+                    'sourceEditing'
+                ],
+                shouldNotGroupWhenFull: true
+            },
+            simpleUpload: {
+                // The URL that the images are uploaded to.
+                uploadUrl: 'http://example.com',
+
+                // Enable the XMLHttpRequest.withCredentials property.
+                withCredentials: true,
+
+                // Headers sent along with the XMLHttpRequest to the upload server.
+                headers: {
+                    'X-CSRF-TOKEN': 'CSRF-Token',
+                    Authorization: 'Bearer <JSON Web Token>'
+                }
+            },
+            // Changing the language of the interface requires loading the language file using the <script> tag.
+            // language: 'es',
+            list: {
+                properties: {
+                    styles: true,
+                    startIndex: true,
+                    reversed: true
+                }
+            },
+            // https://ckeditor.com/docs/ckeditor5/latest/features/headings.html#configuration
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                    { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                    { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                    { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                    { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                ]
+            },
+            // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
+            placeholder: 'Welcome to CKEditor 5!',
+            // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
+            fontFamily: {
+                options: [
+                    'default',
+                    'Arial, Helvetica, sans-serif',
+                    'Courier New, Courier, monospace',
+                    'Georgia, serif',
+                    'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                    'Tahoma, Geneva, sans-serif',
+                    'Times New Roman, Times, serif',
+                    'Trebuchet MS, Helvetica, sans-serif',
+                    'Verdana, Geneva, sans-serif'
+                ],
+                supportAllValues: true
+            },
+            // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-size-feature
+            fontSize: {
+                options: [10, 12, 14, 16, 18, 20, 22],
+                supportAllValues: true
+            },
+            // Be careful with the setting below. It instructs CKEditor to accept ALL HTML markup.
+            // https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html#enabling-all-html-features
+            htmlSupport: {
+                allow: [
+                    {
+                        name: /.*/,
+                        attributes: true,
+                        classes: true,
+                        styles: true
+                    }
+                ]
+            },
+            // Be careful with enabling previews
+            // https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html#content-previews
+            htmlEmbed: {
+                showPreviews: true
+            },
+            // https://ckeditor.com/docs/ckeditor5/latest/features/link.html#custom-link-attributes-decorators
+            link: {
+                decorators: {
+                    addTargetToExternalLinks: true,
+                    defaultProtocol: 'https://',
+                    toggleDownloadable: {
+                        mode: 'manual',
+                        label: 'Downloadable',
+                        attributes: {
+                            download: 'file'
+                        }
+                    }
+                }
+            },
+            // https://ckeditor.com/docs/ckeditor5/latest/features/mentions.html#configuration
+            mention: {
+                feeds: [
+                    {
+                        marker: '@',
+                        feed: [
+                            '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy', '@canes', '@chocolate', '@cookie', '@cotton', '@cream',
+                            '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake', '@gingerbread', '@gummi', '@ice', '@jelly-o',
+                            '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum', '@pudding', '@sesame', '@snaps', '@soufflé',
+                            '@sugar', '@sweet', '@topping', '@wafer'
+                        ],
+                        minimumCharacters: 1
+                    }
+                ]
+            },
+            // The "super-build" contains more premium features that require additional configuration, disable them below.
+            // Do not turn them on unless you read the documentation and know how to configure them and setup the editor.
+            removePlugins: [
+                // These two are commercial, but you can try them out without registering to a trial.
+                // 'ExportPdf',
+                // 'ExportWord',
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
+                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
+                // Storing images as Base64 is usually a very bad idea.
+                // Replace it on production website with other solutions:
+                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
+                // 'Base64UploadAdapter',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
+                // from a local file system (file://) - load this site via HTTP server if you enable MathType
+                'MathType'
+            ]
+        });
+    </script>
+    </script>
+</body>
+
+</html>

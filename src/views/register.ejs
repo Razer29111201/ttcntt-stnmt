@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+
+    <title>Đăng Ký</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title"> Đăng Ký</h1>
+        <form action="/register/post" method="post" id="form-1">
+
+            <div class="full-name">
+                <div class="surname form-group">
+
+                    <input onchange="validater()" type="text" name="surname" placeholder="Nhập họ" id="subname">
+                    <div></div>
+                    <small class="form-message1"></small>
+                </div>
+                <div class="name form-group">
+
+                    <input type="text" onchange="validater()" name="name" placeholder="Nhập Tên" id="name">
+                    <div></div>
+                    <small class="form-message2"></small>
+                </div>
+            </div>
+            <div class="input-list form-group">
+
+                <input type="text" onchange="validater()" name="user" id="user" placeholder="Tên Đăng Nhập">
+                <div></div>
+                <% if (mess) { %>
+                    <small class="form-message3">
+                        Tên Đăng Nhập Đã Tồn Tạ<iframe src="" frameborder="0"></iframe>
+                    </small>
+                    <% } %>
+            </div>
+            <div class="input-list form-group">
+
+                <input type="email" onchange="validater()" name="email" placeholder="Nhập Email" id="email">
+                <div></div>
+                <small class="form-message4"></small>
+            </div>
+            <div class="input-list form-group">
+
+                <input type="text" onchange="validater()" name="pass" placeholder="Nhập Mật Khẩu" id="pass">
+                <div></div>
+                <small class="form-message5"></small>
+            </div>
+            <div class="input-list form-group">
+
+                <input type="text" onchange="validater()" name="comfimpass" placeholder="Nhập Lại Mật Khẩu"
+                    id="comfimpass">
+                <div></div> <small class="form-message6"></small>
+            </div>
+
+            <div class="input-list form-group">
+                <label for="cars">Giới Tính</label>
+                <select id="cars" name="sex" aria-placeholder="Chọn danh xưng">
+                    <option value="1">Nam</option>
+                    <option value="2">Nữ</option>
+                    <option value="3">Khác</option>
+
+                </select>
+                <input type="text" value="0" hidden name="role">
+            </div>
+
+            <div class="note">
+                <span>Người dùng dịch vụ của chúng tôi có thể đã tải thông tin liên hệ của bạn lên Sever.</span>
+
+            </div>
+            <div class="dieukhoan">
+
+                <a href="/login">Bạn Đã Có Tài Khoản?</a>
+            </div>
+
+            <div class="btn">
+                <button id="btn-submit" type="submit">Đăng Ký</button>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+
+
+    <script src="/js/jquery-3.6.3.min.js"></script>
+
+
+
+    <script>
+        const model = {
+            surname: false,
+            name: false,
+            user: false,
+            email: false,
+            pass: false,
+            confimpass: false
+        }
+        const validater = () => {
+            if ($('#subname').val() != '' && $('#subname').val().trim().length > 0) {
+                model.surname = true
+                $('.form-message1').html('')
+            } else {
+                $('.form-message1').html('Hãy Nhập Họ')
+                model.surname = false
+            }
+
+            if ($('#name').val() != '') {
+                model.name = true
+                $('.form-message2').html('')
+            } else {
+                $('.form-message2').html('Hãy Nhập Tên')
+                model.name = false
+            }
+
+            if ($('#user').val().trim().length > 4) {
+                model.user = true
+                $('.form-message3').html('')
+            } else {
+                $('.form-message3').html('Tên Đăng Nhập Phải Trên 4 Ký Tự')
+                model.user = false
+            }
+
+            if ($('#email').val() != '') {
+                model.email = true
+                $('.form-message4').html('')
+            } else {
+                $('.form-message4').html('Hãy Nhập Email')
+                model.email = false
+            }
+
+            if ($('#pass').val().trim().length > 6) {
+                model.pass = true
+                $('.form-message5').html('')
+            } else {
+                $('.form-message5').html('Mật Khẩu Phải Trên 6 Ký Tự')
+                model.pass = false
+            }
+
+            if ($('#comfimpass').val() === $('#pass').val()) {
+                model.confimpass = true
+                $('.form-message6').html('')
+            } else {
+                $('.form-message6').html('Mật Khẩu Không Khớp')
+                model.confimpass = false
+            }
+
+            if (model.surname == true &&
+                model.name == true &&
+                model.user == true &&
+                model.email == true &&
+                model.pass == true &&
+                model.confimpass == true) {
+
+                $('#btn-submit').prop('disabled', false);
+            } else {
+                $('#btn-submit').prop('disabled', true);
+
+
+            }
+        }
+
+    </script>
+
+    <script src="/js/register.js"></script>
+</body>
+
+</html>

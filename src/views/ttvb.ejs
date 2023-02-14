@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/ttvb.css">
+    <title>Trung Tâm Công Nghệ Thông Tin Sở Tài Nguyên Môi Trường Quảng Ninh</title>
+</head>
+
+<body>
+
+    <div class="grid wide">
+        <%- include('./partials/header'); %>
+            <div class="container">
+                <div class="row">
+                    <div class="col m-9">
+                        <div class="body">
+                            <h1>Danh Sách Thông Tin Văn Bản</h1>
+                            <div id="select" class="sel">
+
+
+                            </div>
+                            <div class="category">
+                                <div class="category-select">
+                                    <label for="">Dạng Văn Bản: </label>
+                                    <select name="vanban" class="vanban">
+                                        <option value="idvanban">Tắt Cả Văn Bản</option>
+                                        <option value="Thông Báo">Thông Báo</option>
+                                        <option value="Địa Phương">Địa Phương</option>
+                                        <option value="Trung Ương">Trung Ương</option>
+                                    </select>
+                                </div>
+                                <div class="category-select">
+                                    <label for="">Chủ Đề: </label>
+                                    <select name="chude" class="chude" id="" style="margin-left: 75px;">
+                                        <option value="idchude">Tất cả các chủ đề</option>
+                                        <option value="Giới thiệu">Giới thiệu</option>
+                                        <option value="Quyết định thành lập">Quyết định thành lập</option>
+                                        <option value="Sơ đồ tổ chức">Sơ đồ tổ chức</option>
+                                        <option value="Điều lệ tổ chức">Điều lệ tổ chức</option>
+                                        <option value="Tin tức nổi bật"> Tin tức nổi bật</option>
+                                        <option value="Tài nguyên và môi trường">Tài nguyên và môi trường</option>
+                                        <option value="Hoạt động nội bộ">Hoạt động nội bộ</option>
+                                        <option value="Hợp tác phát triển">Hợp tác phát triển</option>
+                                        <option value="Công nghệ thông tin"> Công nghệ thông tin</option>
+                                        <option value="Danh sách Ứng dụng">Danh sách Ứng dụng</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <input type="search" id="search" placeholder="Tìm Kiếm">
+                                </div>
+                            </div>
+                            <div class="body-content">
+                                <table class="content-table">
+                                    <tr>
+                                        <th>Số Văn Bản</th>
+                                        <th style="width: 55%;">Tiêu Đề</th>
+                                        <th>Download</th>
+                                        <th></th>
+
+                                    </tr>
+                                    <% for(let i=0 ; i < ttvb.length; i++ ){ %>
+                                        <tr class="ct">
+                                            <td>
+                                                <%=ttvb[i].sovb%>
+                                            </td>
+                                            <td style="text-align: start;">
+                                                <%=ttvb[i].title%>
+                                            </td>
+                                            <td><a href="<%=ttvb[i].linkfile%>">Download</a></td>
+                                            <td><span style="cursor: pointer;" class="select">Chọn</span></td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].chude%>
+                                            </td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].dangvanban%>
+                                            </td>
+                                        </tr>
+                                        <%} %>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m-3">
+                        <div class="list-app">
+                            <h4 class="title-right">Danh Sách Ứng Dụng</h4>
+                            <div class="app-scroll">
+                                <div class="item-app">
+                                    <img src="img/hopdong.png" alt="">
+                                    <a href="">Hợp Đồng Thuê Đất</a>
+                                </div>
+                                <div class="item-app">
+                                    <img src="img/hopdong.png" alt="">
+                                    <a href="">Quản Lý Nguồn Ô Nhiễm Nước</a>
+                                </div>
+                                <div class="item-app">
+                                    <img src="img/moitruong.png" alt="">
+                                    <a href="">Phần mềm Địa chất Khoáng sản</a>
+                                </div>
+                                <div class="item-app">
+                                    <img src="img/KhoSo.png" alt="">
+                                    <a href="">Quản lý Kho</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="info">
+                            <h4 class="title-right">Thông Tin Văn Bản</h4>
+                            <div class="info-slide">
+                                <ul class="info-list">
+                                    <li class="info-item">
+                                        <a href="">Kế hoạch Triển khai thi hành Luật An ninh mạng</a>
+                                    </li>
+                                    <li class="info-item">
+                                        <a href="">Quyết định về việc quy định phát triển, quản lý, khai thác hạ tầng kỹ
+                                            thuật
+                                            và hệ thống thông tin, cơ sở dữ liệu tỉnh Quảng Ninh
+                                        </a>
+                                    </li>
+                                    <li class="info-item">
+                                        <a href="">Quyết định về việc ban hành Quy chế quản lý, vận hành và khai thác Hệ
+                                            thống
+                                            thông tin đất đai tỉnh Quảng Ninh
+                                        </a>
+                                    </li>
+                                    <li class="info-item">
+                                        <a href="">Quyết định về việc giao nhiệm vụ cập nhật, theo dõi, quản lý các dự
+                                            án
+                                            được
+                                            nhà nước giao đất, thuê đất trên địa bàn tỉnh Quảng Ninh
+                                        </a>
+                                    </li>
+                                    <li class="info-item">
+                                        <a href="">Thông báo ý kiến chỉ đạo của đồng chí Giám đốc Sở Tài nguyên và Môi
+                                            trường về
+                                            việc thực hiện công tác luân chuyển hồ sơ, cập nhật, theo dõi, quản lý, lưu
+                                            trữ,
+                                            hồ
+                                            sơ các dự án sử dụng đất, mặt nước trên địa bàn tỉnh.
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="maps">
+                            <h4 class="title-right">
+                                Bản Đồ
+                            </h4>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.2184807995686!2d107.11959311490202!3d20.943739496051254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a5769b3b2b7c7%3A0xd96bf712ba554e1a!2zVHLhu6UgU-G7nyBMacOqbiBDxqEgUXVhbiBT4buRIDM!5e0!3m2!1svi!2s!4v1673368814358!5m2!1svi!2s"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="lienket">
+                            <h4 class="title-right">
+                                Liên Kết Web
+                            </h4>
+                            <select name="" id="">
+                                <option value="">
+                                    <a href="">Bộ Tài Nguyên Môi Trường</a>
+                                </option>
+                                <option value="">
+                                    <a href="">Bộ Tư Pháp</a>
+                                </option>
+                                <option value="">
+                                    <a href="">Đảng Cộng Sản Việt Nam</a>
+                                </option>
+                                <option value="">
+                                    <a href="">Chính Phủ</a>
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/js/jquery-3.6.3.min.js"></script>
+
+    <script>
+
+        $.ajax({
+            url: '/ttvb/a',
+            type: 'get',
+            data: { key: $("#search").val() },
+            success: (function (data) {
+                var item = $('.ct')
+                var select1 = $('.select')
+                var option = $('.chude')
+                var vanban = $('.vanban')
+                option.on('change', () => {
+                    let value = option.val().toLowerCase()
+                    console.log(option.val().toLowerCase());
+                    $(".ct").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+                    });
+                })
+                option.on('change', () => {
+                    let value = option.val().toLowerCase()
+                    console.log(option.val().toLowerCase());
+                    $(".ct").filter(function () {
+
+                        if (value === 'idchude') {
+                            $('.content-table').html(` <tr>
+                                        <th>Số Văn Bản</th>
+                                        <th style="width: 55%;">Tiêu Đề</th>
+                                        <th>Download</th>
+                                        <th></th>
+
+                                    </tr>
+                                    <% for(let i=0 ; i < ttvb.length; i++ ){ %>
+                                        <tr class="ct">
+                                            <td>
+                                                <%=ttvb[i].sovb%>
+                                            </td>
+                                            <td style="text-align: start;">
+                                                <%=ttvb[i].title%>
+                                            </td>
+                                            <td><a href="<%=ttvb[i].linkfile%>">Download</a></td>
+                                            <td><span style="cursor: pointer;" class="select">Chọn</span></td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].chude%>
+                                            </td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].dangvanban%>
+                                            </td>
+                                        </tr>
+                                        <%} %>`)
+                        } else {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        }
+                    });
+                })
+                vanban.on('change', () => {
+                    let value = vanban.val().toLowerCase()
+                    console.log(vanban.val().toLowerCase());
+                    $(".ct").filter(function () {
+                        if (value === 'idvanban') {
+                            $('.content-table').html(` <tr>
+                                        <th>Số Văn Bản</th>
+                                        <th style="width: 55%;">Tiêu Đề</th>
+                                        <th>Download</th>
+                                        <th></th>
+
+                                    </tr>
+                                    <% for(let i=0 ; i < ttvb.length; i++ ){ %>
+                                        <tr class="ct">
+                                            <td>
+                                                <%=ttvb[i].sovb%>
+                                            </td>
+                                            <td style="text-align: start;">
+                                                <%=ttvb[i].title%>
+                                            </td>
+                                            <td><a href="<%=ttvb[i].linkfile%>">Download</a></td>
+                                            <td><span style="cursor: pointer;" class="select">Chọn</span></td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].chude%>
+                                            </td>
+                                            <td style="display: none;">
+                                                <%=ttvb[i].dangvanban%>
+                                            </td>
+                                        </tr>
+                                        <%} %>`)
+                        } else {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        }
+                    });
+                })
+
+
+
+
+
+
+                $('#search').on('keyup', function () {
+                    console.log($(this).val());
+                    var value = $(this).val().toLowerCase();
+                    $(".ct").filter(function () {
+                        console.log($(this));
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                })
+
+
+
+                select1.each(function (i, e) {
+                    $(this).click(function () {
+
+                        $('#select').html(`
+                        <i class='bx bx-x' id="close"></i>
+                        <table class="selectt">
+                                    <tr>
+                                        <td>Chủ Đề:</td>
+                                        <td>${data.ttvb[i].chude}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Dạng Văn Bản:</td>
+                                        <td>${data.ttvb[i].dangvanban}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Số văn bản:</td>
+                                        <td>${data.ttvb[i].sovb}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Tiêu đề:</td>
+                                        <td>${data.ttvb[i].title}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày đăng:</td>
+                                        <td>${data.ttvb[i].time}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Nội Dung:</td>
+                                        <td>${data.ttvb[i].content}</td>
+
+                                    </tr>
+
+
+
+                                    
+                                </table>`)
+                        $('#close').click(function () {
+                            $('#select').html('')
+                        })
+
+                    })
+                })
+
+            }),
+            error: function (e) {
+
+            }
+
+
+        })
+
+
+    </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
